@@ -1,0 +1,209 @@
+body {
+    background-color: #202020;
+}
+
+.mainHeader {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.headerContainer {
+    display: flex;
+    padding: 1rem 4rem;
+    align-items: center;
+}
+
+.mainHeader .headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.mainHeader .headerRight {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.headerContainer .navLinks {
+    display: flex;
+    list-style: none;
+    gap: 2rem; 
+}
+
+.headerContainer .listLinks a {
+    z-index: 99;
+    position: relative;
+    padding: .1rem;
+}
+
+.headerContainer .listLinks a::after, 
+.headerContainer .listLinks a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+}
+
+.headerContainer .listLinks a::after {
+    bottom: 0;
+    left: 0;
+}
+
+.headerContainer .listLinks a::before {
+    top: 0;
+    right: 0;
+}
+
+.headerContainer .listLinks a:hover::after, 
+.headerContainer .listLinks a:hover::before {
+    animation: lineLink .25s both forwards;
+}
+
+.headerContainer .listLinks a {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+@keyframes lineLink {
+    to {
+        width: 100%;
+    }
+}
+
+.mainHeader .headerIcons {
+    display: flex;
+    gap: 2rem;
+    width: 30%;
+    justify-content: flex-end;
+    flex: auto;
+}
+
+.mainHeader .hamburguerMenu {
+    display: none;
+}
+
+@media (max-width: 970px) {
+    .mainHeader .headerLeft {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .hamburguerMenu div {
+        width: 32px;
+        height: 2px;
+        background: #fff;
+        margin: 8px;
+        transition: 0.3s;
+    }
+
+    .headerContainer {
+        flex-direction: column;
+    }
+
+    .headerContainer .headerLeft {
+        width: 100%;
+        justify-content: space-between;
+        z-index: 99;
+    }
+
+    .headerContainer .headerRight {
+        transform: translateY(-200%);
+        transition: transform 0.3s ease-out;
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        place-content: flex-end;
+    }
+    .headerContainer.menuActive .headerRight {
+        animation: menuDropdown .3s forwards;
+    }
+    @keyframes menuDropdown {
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    .headerRight .headerIcons {
+        width: 100%;
+        justify-content: space-around;
+        flex: none;
+    }
+    .headerRight .headerIcons.active {
+        margin: 1rem 0;
+    }
+    .headerContainer .headerRight .navLinks {
+        display: flex;
+        flex-direction: column;
+    }
+    .headerRight .navMenu.active {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .headerRight .navLinks {
+        justify-content: space-evenly;
+    }
+
+    .mainHeader .hamburguerMenu {
+        display: block;
+    }
+
+    .menuBtn {
+        padding: .5rem;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .menuBtn.active .hamburguerMenu{
+        text-align: center;
+    }
+
+    .menuBtn.active .hamburguerMenu {
+        transform: translateX(0);
+      }
+      
+      .menuBtn.active .hamburguerMenu .line1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+      }
+      
+      .menuBtn.active .hamburguerMenu .line2 {
+        opacity: 0;
+      }
+      
+      .menuBtn.active .hamburguerMenu .line3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+      }
+
+
+
+
+      /*QUANDO O MENU ESTIVER ATIVO*/
+      .headerContainer.menuActive {
+        background: #202020;
+        height: 100vh;
+        display: block;
+      }
+
+      .headerContainer.menuActive  {
+        
+      }
+
+
+    @keyframes menuOpen {
+        from {
+            transform: translateY(0);
+        }
+    }
+}
