@@ -1,0 +1,42 @@
+#hero .slide {
+    color: white;
+    position: relative;
+}
+
+.slideItems {
+    /*overflow-x: hidden;*/
+    display: flex;
+}
+
+.slideThumb {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    bottom: 2rem;
+    justify-content: center;
+}
+
+.slideThumb .thumbItem {
+    height: 2px;
+    width: 100px;
+    background-color: white;
+    cursor: pointer;
+    opacity: .5;
+}
+
+.slideThumb .thumbItem.active {
+    height: 2px;
+    width: 100px;
+    background-color: white;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.slide .slideItem {
+    display: none;
+}
+.slide .slideItem.active {
+    display: block;
+}
