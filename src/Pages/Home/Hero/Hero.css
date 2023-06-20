@@ -1,0 +1,165 @@
+#hero .slide {
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroBgContrainer img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.slideItems {
+    /*overflow-x: hidden;*/
+    display: flex;
+    transition: transform .7s ease;
+}
+
+.slideItems .slideItem {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slideItem .heroTextContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.64) 100%);
+    display: flex;
+    align-items: center;
+    padding-left: 8.75rem;
+}
+
+.slideItem .heroTextContainer h1 {
+    max-width: 568px;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 57px;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.slideItem .heroTextContainer p {
+    max-width: 461px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 34px;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.slideItem .heroTextContainer a {
+    border: 2px solid white;
+    color: white;
+    padding: 1rem 2rem;
+    transition: .25s linear;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 43px;
+}
+
+.slideItem .heroTextContainer a:hover {
+    color: black;
+    background-color: white;
+}
+
+.slideThumb {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    bottom: 2rem;
+    justify-content: center;
+}
+
+.slideControll .leftBtn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    height: 100%;
+}
+
+.slideControll .leftBtn, 
+.slideControll .rightBtn {
+    padding: 1rem;
+}
+
+.slideControll button {
+    transition: .25s ease;
+    opacity: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
+    padding: .25rem;
+    display: flex;
+    align-items: center;
+}
+
+.leftBtn:hover button, .rightBtn:hover button {
+    opacity: 1;
+}
+
+.slideControll .leftBtn button::after, .slideControll .rightBtn button:after {
+    transition: .25s ease;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    background: black;
+    border-radius: 100%;
+    z-index: -1;
+    opacity: 0;
+    border: 2px solid white;
+}
+
+
+.leftBtn button:hover::after, .rightBtn button:hover::after {
+    opacity: 1;
+}
+
+.slideControll .rightBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    height: 100%;
+}
+
+.slide .slideControll div {
+    display: flex;
+    align-items: center;
+}
+
+.slideThumb .thumbItem {
+    height: 2px;
+    width: 100px;
+    background-color: white;
+    cursor: pointer;
+    opacity: .5;
+    transition: linear .25s;
+}
+
+.slideThumb .thumbItem:hover {
+    opacity: 0.75;
+}
+
+.slideThumb .thumbItem.active {
+    height: 2px;
+    width: 100px;
+    background-color: white;
+    cursor: pointer;
+    opacity: 1;
+}

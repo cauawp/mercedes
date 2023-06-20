@@ -13,3 +13,14 @@ body {
 a {
   text-decoration: none;
 }
+
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+button, input {
+  outline: none;
+  background: none;
+  border: none;
+}

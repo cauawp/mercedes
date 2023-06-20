@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 import HeroBgOne from "./imgs/hero-bg_1.png";
@@ -7,13 +8,21 @@ import HeroBgTwo from "./imgs/hero-bg_2.png";
 import HeroBgThree from "./imgs/hero-bg_3.png";
 import HeroBgFour from "./imgs/hero-bg_4.png";
 
-const Home = () => {
+//ICONS
+import { ReactComponent as LeftArrow } from "./imgs/hero-left_arrow.svg";
+import { ReactComponent as RightArrow } from "./imgs/hero-right_arrow.svg";
+
+const Home = (props: any) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [position, setPosition] = useState(0);
-  const slideItemsRef = useRef();
+  const slideItemsRef = React.useRef<HTMLDivElement>(null);
+
+  console.log(activeSlide);
+  console.log(position);
+  console.log(slideItemsRef.current);
 
   React.useEffect(() => {
-    const { width } = slideItemsRef.current.getBoundingClientRect();
+    const width: any = slideItemsRef.current?.getBoundingClientRect().width;
     setPosition(-(width * activeSlide));
   }, [activeSlide]);
 
@@ -70,7 +79,7 @@ const Home = () => {
 
   return (
     <>
-      <section id="hero">
+      <section id="hero" ref={props.heroRefProps}>
         <div className="slide">
           <div
             className="slideItems"
@@ -78,21 +87,30 @@ const Home = () => {
             ref={slideItemsRef}
           >
             {slideItems.map((slide, index) => (
-              <div
-                className={`slideItem ${index === activeSlide ? "active" : ""}`}
-                key={index}
-              >
-                <h1>{slide.title}</h1>
-                <img src={slide.img} alt="" />
+              <div className={`slideItem`} key={index}>
+                <div className="heroTextContainer">
+                  <div className="heroText">
+                    <h1>{slide.title}</h1>
+                    <p>{slide.paragraph}</p>
+                    <Link to={slide.name}>SAIBA MAIS</Link>
+                  </div>
+                </div>
+                <div className="heroBgContrainer">
+                  <img src={slide.img} alt="" />
+                </div>
               </div>
             ))}
           </div>
           <div className="slideControll">
-            <div>
-              <button onClick={prevSlide}>Anterior</button>
+            <div className="leftBtn">
+              <button onClick={prevSlide}>
+                <LeftArrow></LeftArrow>
+              </button>
             </div>
-            <div>
-              <button onClick={nextSlide}>Próximo</button>
+            <div className="rightBtn">
+              <button onClick={nextSlide}>
+                <RightArrow></RightArrow>
+              </button>
             </div>
           </div>
           <div className="slideThumb">

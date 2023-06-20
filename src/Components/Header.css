@@ -8,6 +8,13 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    transition: .3s linear;
+}
+
+.mainHeader.scroll {
+    background-color: black;
+    color: white;
 }
 
 .headerContainer {
@@ -91,6 +98,7 @@ body {
     display: none;
 }
 
+
 @media (max-width: 970px) {
     .mainHeader .headerLeft {
         gap: 2rem;
@@ -98,6 +106,14 @@ body {
 }
 
 @media (max-width: 900px) {
+
+    .mainHeader .headerRight {
+        display: none !important;
+    }
+
+    .headerContainer.menuActive .headerRight{
+        display: flex !important;
+    }
 
     .hamburguerMenu div {
         width: 32px;
@@ -196,10 +212,6 @@ body {
         background: #202020;
         height: 100vh;
         display: block;
-      }
-
-      .headerContainer.menuActive  {
-        
       }
 
 

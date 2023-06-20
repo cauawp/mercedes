@@ -12,7 +12,10 @@ const Header = (props: any) => {
 
   return (
     <>
-      <div className={`mainHeader ${props.headerClassActive}`}>
+      <div
+        className={`mainHeader ${props.headerClassScroll}`}
+        ref={props.headerRefProps}
+      >
         <div className={`headerContainer ${menu ? "menuActive" : ""}`}>
           <div className="headerLeft">
             <Link className="headerLogo" to="/">
