@@ -1,6 +1,5 @@
 #modules {
     background-color: #F6F6F6;
-    padding: 0 12.5rem;
 }
 
 .moduleSlide {
@@ -80,16 +79,35 @@
     margin-bottom: 3rem;
 }
 
+.moduleText .moduleInfo h1,
+    .moduleText .moduleInfo p {
+    display: none;
+    opacity: 0;
+}
+
 .moduleInfo p {
     max-width: 240px;
 }
 
 .moduleText .moduleInfo.active {
-    animation: moduleInfo 1.2s forwards;
-    transition: transform 1.2s;
+    display: block;
+    opacity: 1;
+}
+
+.moduleText .moduleInfo.active h1 {
+    animation: moduleInfo 1s forwards;
+    transition: transform 1s;
     transform: translateX(-20px);
     display: block;
 }
+
+.moduleText .moduleInfo.active p {
+    animation: moduleInfo 3s forwards;
+    transition: transform 3s;
+    transform: translateX(-40px);
+    display: block;
+}
+
 
 @keyframes moduleInfo {
     to {

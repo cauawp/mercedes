@@ -4,6 +4,7 @@ import Header from "../../Components/Header";
 import Hero from "./Hero/Hero";
 import Modules from "./Modules/Modules";
 import Career from "./Career/Career";
+import Lifestyle from "./Lifestyle/Lifestyle";
 
 const Home = () => {
   const [homeScrolledActive, setHomeScrolledActive] = useState(false);
@@ -33,6 +34,7 @@ const Home = () => {
         <Hero heroRefProps={heroRef}></Hero>
         <Modules></Modules>
         <Career></Career>
+        <Lifestyle></Lifestyle>
       </div>
     </>
   );
