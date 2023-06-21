@@ -1,0 +1,42 @@
+#impressa {
+    padding: 10rem 8.75rem; 
+    overflow: hidden;
+}
+
+.impressaSlide {
+    overflow-x: auto;
+}
+
+.impressaSlide {
+    display: flex;
+    gap: 3.5rem;
+}
+
+.impressaItem {
+    flex-shrink: 0;
+    max-width: 422px;
+}
+
+.impressaItem .imgContent {
+    height: 284px;
+    margin-bottom: 2rem;
+}
+
+.impressaItem img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.impressaItemTitle {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 37px;
+    margin-bottom: 1.5rem;
+}
+
+.impressaItemDesc {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 34px;
+}

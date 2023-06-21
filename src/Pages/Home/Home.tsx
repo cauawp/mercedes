@@ -5,6 +5,7 @@ import Hero from "./Hero/Hero";
 import Modules from "./Modules/Modules";
 import Career from "./Career/Career";
 import Lifestyle from "./Lifestyle/Lifestyle";
+import Printed from "./Printed/Printed";
 
 const Home = () => {
   const [homeScrolledActive, setHomeScrolledActive] = useState(false);
@@ -35,6 +36,7 @@ const Home = () => {
         <Modules></Modules>
         <Career></Career>
         <Lifestyle></Lifestyle>
+        <Printed></Printed>
       </div>
     </>
   );
