@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.scroll-container {
+  overflow-y: scroll;
+  position: relative;
+}
+
+.no-scroll-y {
+  overflow-y: hidden;
+}

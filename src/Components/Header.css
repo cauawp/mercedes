@@ -13,11 +13,16 @@
     color: white;
 }
 
+.mainHeader.scroll .headerContainer {
+    padding: 1rem 8.75rem;
+}
+
 .headerContainer {
     display: flex;
-    padding: 1rem 4rem;
+    padding: 2rem 8.75rem;
     align-items: center;
     white-space: nowrap;
+    transition: .3s linear;
 }
 
 .mainHeader .headerLeft {

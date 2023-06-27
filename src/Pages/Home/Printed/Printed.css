@@ -4,7 +4,12 @@
 }
 
 .impressaSlide {
-    overflow-x: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+}
+
+.impressaItem {
+    scroll-snap-align: start;
 }
 
 .impressaSlide {
