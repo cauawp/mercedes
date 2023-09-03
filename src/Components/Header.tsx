@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import "./Header.css";
 
 import Logo from "./imgs/mercedes-logo.png";
@@ -7,7 +7,12 @@ import { ReactComponent as LocationIcon } from "./imgs/location.svg";
 import { ReactComponent as SearchIcon } from "./imgs/search.svg";
 import { ReactComponent as UserIcon } from "./imgs/user.svg";
 
-const Header = (props: any) => {
+interface HeaderProps {
+  headerClassScroll: string;
+  headerRefProps: React.RefObject<HTMLDivElement>;
+}
+
+const Header: React.FC<HeaderProps> = (props) => {
   const [menu, setMenu] = useState(false);
 
   return (
@@ -36,16 +41,16 @@ const Header = (props: any) => {
             <nav className={`navMenu ${menu ? "active" : ""}`}>
               <ul className="navLinks">
                 <li className="listLinks">
-                  <a href="">Veículos</a>
+                  <a href="/">Veículos</a>
                 </li>
                 <li className="listLinks">
-                  <a href="">Carreira</a>
+                  <a href="/">Carreira</a>
                 </li>
                 <li className="listLinks">
-                  <a href="">Impressa</a>
+                  <a href="/">Impressa</a>
                 </li>
                 <li className="listLinks">
-                  <a href="">Institucional</a>
+                  <a href="/">Institucional</a>
                 </li>
               </ul>
             </nav>

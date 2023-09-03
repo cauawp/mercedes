@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import "./Lifestyle.css";
 
 //IMAGES
@@ -9,9 +9,9 @@ import LifestyleImg3 from "./imgs/lifestyle-img_3.png";
 import LifestyleImg4 from "./imgs/lifestyle-img_4.png";
 
 //ICONS
-import { ReactComponent as InstagramIcon } from './imgs/instagram-icon.svg'
+import { ReactComponent as InstagramIcon } from "./imgs/instagram-icon.svg";
 
-const Lifestyle = () => {
+const Lifestyle: React.FC = () => {
   return (
     <>
       <section id="lifestyle">
@@ -21,32 +21,60 @@ const Lifestyle = () => {
               <span>Mercedes</span>
               <span>lifestyle</span>
             </h1>
-            <Link to="https://www.instagram.com/mercedesbenz/" target="_blank" className="lifestyleImgContent one">
+            <Link
+              to="https://www.instagram.com/mercedesbenz/"
+              target="_blank"
+              className="lifestyleImgContent one"
+            >
               <img src={LifestyleImg1} alt="Cuca" />
               <div className="lifestyleInfoContainer">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ligula quis aliquam sit velit sollicitudin.</p>
-                <InstagramIcon></InstagramIcon>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ligula quis aliquam sit velit sollicitudin.
+                </p>
+                <InstagramIcon />
               </div>
             </Link>
-            <Link to="https://www.instagram.com/mercedesbenz/" target="_blank" className="lifestyleImgContent two">
+            <Link
+              to="https://www.instagram.com/mercedesbenz/"
+              target="_blank"
+              className="lifestyleImgContent two"
+            >
               <img src={LifestyleImg2} alt="Cuca" />
               <div className="lifestyleInfoContainer">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ligula quis aliquam sit velit sollicitudin.</p>
-                <InstagramIcon></InstagramIcon>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ligula quis aliquam sit velit sollicitudin.
+                </p>
+                <InstagramIcon />
               </div>
             </Link>
-            <Link to="https://www.instagram.com/mercedesbenz/" target="_blank" className="lifestyleImgContent three">
+            <Link
+              to="https://www.instagram.com/mercedesbenz/"
+              target="_blank"
+              className="lifestyleImgContent three"
+            >
               <img src={LifestyleImg3} alt="Cuca" />
               <div className="lifestyleInfoContainer">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ligula quis aliquam sit velit sollicitudin.</p>
-                <InstagramIcon></InstagramIcon>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ligula quis aliquam sit velit sollicitudin.
+                </p>
+                <InstagramIcon />
               </div>
             </Link>
-            <Link to="https://www.instagram.com/mercedesbenz/" target="_blank" className="lifestyleImgContent four">
+            <Link
+              to="https://www.instagram.com/mercedesbenz/"
+              target="_blank"
+              className="lifestyleImgContent four"
+            >
               <img src={LifestyleImg4} alt="Cuca" />
               <div className="lifestyleInfoContainer">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ligula quis aliquam sit velit sollicitudin.</p>
-                <InstagramIcon></InstagramIcon>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Ligula quis aliquam sit velit sollicitudin.
+                </p>
+                <InstagramIcon />
               </div>
             </Link>
           </div>

@@ -4,6 +4,10 @@
     padding: 4.6rem 8.75rem;
 }
 
+.footerTop {
+    margin-bottom: 4.5rem;
+}
+
 #footer hr {
     background-color: transparent;
     border-top: 1px solid #C6C6C6;
@@ -29,6 +33,26 @@
     list-style: none;
 }
 
+.footerLinks a {
+    position: relative;
+    transition: linear .25s;
+}
+.footerLinks a:hover::after {
+    width: 100%;
+}
+.footerLinks a::after {
+    transition: linear .25s;
+    content: '';
+    background-color: #000;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+}
+
 #footer .footerLinks a {
     color: #000;
     font-size: 16px;
@@ -37,12 +61,19 @@
 #footer .socialNet h3 {
     font-size: 20px;
     font-weight: 500;
+    margin-bottom: 1.85rem;
 }
 
 .socialNet .socialIcons {
     display: flex;
     gap: 3rem;
     align-items: center;
+}
+
+.footerList {
+    gap: 1.9rem;
+    display: flex;
+    flex-direction: column;
 }
 
 #footer .footerCenter {
@@ -62,4 +93,24 @@
 .footerBottom a {
     color: #000;
     font-size: 16px;
+}
+
+.footerBottom h4 a {
+    position: relative;
+    transition: linear .25s;
+}
+.footerBottom h4 a:hover {
+    font-weight: 500;
+}
+.footerBottom h4 a::after {
+    transition: linear .25s;
+    content: '';
+    background-color: #000;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
 }

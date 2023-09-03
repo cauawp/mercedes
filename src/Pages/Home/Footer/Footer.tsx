@@ -1,10 +1,11 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
-//IMAGES
+// IMAGES
 import MercedesLogo from "./imgs/mercedes-logo.png";
 
-//ICONS
+// ICONS
 import { ReactComponent as FacebookIcon } from "./imgs/facebook-icon.svg";
 import { ReactComponent as InstagramIcon } from "./imgs/instagram-icon.svg";
 import { ReactComponent as TwitterIcon } from "./imgs/twitter-icon.svg";
@@ -77,34 +78,41 @@ function Footer() {
             <div className="socialNet">
               <h3>Social</h3>
               <div className="socialIcons">
-                <Link
-                  to="https://www.facebook.com/MercedesBenz"
+                <a
+                  href="https://www.facebook.com/MercedesBenz"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <FacebookIcon></FacebookIcon>
-                </Link>
-                <Link to="https://twitter.com/MercedesBenz" target="_blank">
-                  <TwitterIcon></TwitterIcon>
-                </Link>
-                <Link
-                  to="https://www.instagram.com/mercedesbenz/"
+                  <FacebookIcon />
+                </a>
+                <a
+                  href="https://twitter.com/MercedesBenz"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <InstagramIcon></InstagramIcon>
-                </Link>
-                <Link
-                  to="https://www.youtube.com/@MercedesBenz"
+                  <TwitterIcon />
+                </a>
+                <a
+                  href="https://www.instagram.com/mercedesbenz/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <YoutubeIcon></YoutubeIcon>
-                </Link>
+                  <InstagramIcon />
+                </a>
+                <a
+                  href="https://www.youtube.com/@MercedesBenz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <YoutubeIcon />
+                </a>
               </div>
             </div>
             <div className="mercedesLogo">
               <img src={MercedesLogo} alt="" />
             </div>
           </div>
-          <hr></hr>
+          <hr />
           <div className="footerBottom">
             <h4>© 2022. Mercedes-Benz & Vans Brasil</h4>
             <h4>

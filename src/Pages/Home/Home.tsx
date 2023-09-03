@@ -18,41 +18,13 @@ const Home: React.FC = () => {
   React.useEffect(() => {
     const heroHeight: any = heroRef.current?.getBoundingClientRect().height;
     window.addEventListener("scroll", () => {
-      if (window.scrollY >= heroHeight) {
+      if (window.scrollY >= heroHeight - 100) {
         setHomeScrolledActive(true);
       } else {
         setHomeScrolledActive(false);
       }
     });
   }, [homeScrolledActive]);
-
-  /////////////////////////////////
-
-  const printedRef = React.useRef<HTMLDivElement>(null);
-
-  /*React.useEffect(() => {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    let printedTop: any = printedRef.current?.offsetTop;
-    let printedLeft: any = printedRef.current?.scrollLeft;
-
-    function scrollLock() {
-      console.log("Scroll bloqueado");
-      document.documentElement.style.overflowY = "hidden";
-    }
-
-    window.addEventListener("scroll", () => {
-      if (scrollTop >= printedTop || printedLeft == 0) {
-        scrollLock();
-      } else if (printedLeft >= ) {
-
-      } else {
-
-      }
-    });
-  });
-  */
-
-  ////
 
   return (
     <>

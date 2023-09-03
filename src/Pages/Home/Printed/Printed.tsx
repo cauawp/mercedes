@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Printed.css";
 
 //ICONS
-import {ReactComponent as ArrowLeftIcon} from './imgs/arrow-left.svg'
-import {ReactComponent as ArrowRightIcon} from './imgs/arrow-right.svg'
+import { ReactComponent as ArrowLeftIcon } from "./imgs/arrow-left.svg";
+import { ReactComponent as ArrowRightIcon } from "./imgs/arrow-right.svg";
 
 //IMAGES
 import PrintedImg1 from "./imgs/printed-img_1.png";
@@ -11,7 +11,14 @@ import PrintedImg2 from "./imgs/printed-img_2.png";
 import PrintedImg3 from "./imgs/printed-img_3.png";
 import PrintedImg4 from "./imgs/printed-img_4.png";
 
-const impressaItems = [
+interface ImpressaItem {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+}
+
+const impressaItems: ImpressaItem[] = [
   {
     id: 1,
     title: "Vantagens da nova Mercedes Sls Amg",
@@ -45,24 +52,28 @@ const impressaItems = [
 ];
 
 const Printed = (props: any) => {
+  const [activePrinted, setActivePrinted] = useState<number>(0);
+  const [position, setPosition] = useState<number>(0);
+  const impressaItemsRef = React.useRef<HTMLDivElement>(null);
 
-  const [activePrinted, setActivePrinted] = useState(0);
-  const [position, setPosition] = useState(0);
-  const impressaItemsRef = React.useRef<HTMLImageElement>(null);
+  console.log(activePrinted);
 
-  React.useEffect(() => {
-    const width: any = impressaItemsRef.current?.getBoundingClientRect().width;
-    setPosition(-(width * activePrinted));
+  useEffect(() => {
+    const width: number | undefined =
+      impressaItemsRef.current?.getBoundingClientRect().width;
+    if (width !== undefined) {
+      setPosition(-(width * activePrinted) + -32 * activePrinted);
+    }
   }, [activePrinted]);
 
-  function prevSlide(e: any) {
+  function prevSlide(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     if (activePrinted > 0) {
       setActivePrinted(activePrinted - 1);
     }
     e.preventDefault();
   }
-  
-  function nextSlide(e: any) {
+
+  function nextSlide(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     if (activePrinted < impressaItems.length - 1) {
       setActivePrinted(activePrinted + 1);
     } else {
@@ -74,26 +85,29 @@ const Printed = (props: any) => {
   return (
     <>
       <section id="impressa">
-        <div className="impressaContainer">
+        <div className="impressaContainer container">
           <div className="impressaInfo">
-          <h1>Impressa Mercedes</h1>
-          <div className="impressaBtns">
+            <h1>Impressa Mercedes</h1>
+            <div className="impressaBtns">
               <button className="impressaPrev" onClick={prevSlide}>
                 <ArrowLeftIcon></ArrowLeftIcon>
               </button>
               <button className="impressaNext" onClick={nextSlide}>
                 <ArrowRightIcon></ArrowRightIcon>
               </button>
+            </div>
           </div>
-          </div>
-          <div 
-          className="impressaSlide"
-          style={{ transform: `translate(${position}px)` }}
+          <div
+            className="impressaSlide"
+            style={{ transform: `translate3d(${position}px, 0, 0)` }}
           >
             {impressaItems.map((el, index) => (
-              <div 
-              className={`impressaItem ${index === activePrinted ? 'active' : ''}`} 
-              ref={impressaItemsRef}>
+              <div
+                className={`impressaItem ${
+                  index === activePrinted ? "active" : ""
+                }`}
+                ref={impressaItemsRef}
+              >
                 <div className="imgContent">
                   <img src={el.img} alt="" />
                 </div>

@@ -1,17 +1,20 @@
 #impressa {
     padding: 10rem 8.75rem; 
+    overflow: hidden;
 }
 
 .impressaSlide {
     scroll-snap-type: x proximity;
     display: flex;
     transition: transform .25s;
-    gap: 3.5rem;
+    gap: 2rem;
 }
 
 .impressaInfo {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
 }
 
 .impressaInfo h1 {
@@ -24,6 +27,7 @@
 .impressaInfo .impressaBtns {
     display: flex;
     gap: 2rem;
+    height: fit-content;
 }
 
 .impressaInfo .impressaBtns button {

@@ -95,15 +95,15 @@
 }
 
 .moduleText .moduleInfo.active h1 {
-    animation: moduleInfo 1s forwards;
-    transition: transform 1s;
+    animation: moduleInfo .5s forwards;
+    transition: transform .5s;
     transform: translateX(-20px);
     display: block;
 }
 
 .moduleText .moduleInfo.active p {
-    animation: moduleInfo 3s forwards;
-    transition: transform 3s;
+    animation: moduleInfo .75s forwards;
+    transition: transform .75s;
     transform: translateX(-40px);
     display: block;
 }
@@ -111,7 +111,6 @@
 
 @keyframes moduleInfo {
     to {
-        display: initial;
         transform: initial;
         opacity: initial;
     }

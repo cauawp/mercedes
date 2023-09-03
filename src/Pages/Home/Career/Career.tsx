@@ -4,14 +4,14 @@ import "./Career.css";
 import CareerImgOne from "./imgs/career-img_1.png";
 import CareerImgTwo from "./imgs/career-img_2.png";
 
-const Career = () => {
+const Career: React.FC = () => {
   return (
     <>
       <section id="career">
         <div className="careerContainer container">
           <div className="careerLeft">
             <div className="careerTextContainer">
-              <h1>Por que a Mercedez?</h1>
+              <h1>Por que a Mercedes?</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ligula
                 quis aliquam sit velit sollicitudin.
